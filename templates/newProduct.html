@@ -1,0 +1,128 @@
+{% extends "test/shop_base.html" %}
+{% block title %}
+    {% if lan == "e" %}
+        New Product
+    {% elif lan == "c" %}
+        添加新商品
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <div id="product" align="center">
+        {% if lan == "e" %}
+            <h1>Add New Product</h1>
+        {% elif lan == "c" %}
+            <h1>添加新商品</h1>
+        {% endif %}
+        <div id="management">
+            {% if lan == "e" %}
+                <form action="" method="post" enctype="multipart/form-data">
+                    <h4>Product Name (English)</h4>
+                    <input type="text" name="productName" placeholder="product name (English)" id="productName">
+                    <h4>Product Name (Chinese)</h4>
+                    <input type="text" name="productName2" placeholder="product name (Chinese)" id="productName2">
+                    <h4>Price</h4>
+                    <input type="text" name="price" placeholder="price" id="price">
+                    <h4>Category (English)</h4>
+                    <input type="text" name="category" placeholder="category (English)" id="category">
+                    <h4>Category (Chinese)</h4>
+                    <input type="text" name="category2" placeholder="category (Chinese)" id="category2">
+                    <h4>Image</h4>
+                    <input type="file" name="image" id="image" class="fileClassInput ">
+                    <h4>Description (English)</h4>
+                    <textarea name="description" maxlength="320" id="description"></textarea>
+                    <h4>Description (Chinese)</h4>
+                    <textarea name="description2" maxlength="320" id="description2"></textarea>
+                    <input type="submit" value="Submit" id="sb">
+                </form>
+            {% elif lan == "c" %}
+                <form action="" method="post" enctype="multipart/form-data">
+                    <h4>商品英文名称</h4>
+                    <input type="text" name="productName" placeholder="商品英文名称" id="productName">
+                    <h4>商品中文名称</h4>
+                    <input type="text" name="productName2" placeholder="商品中文名称" id="productName2">
+                    <h4>价格</h4>
+                    <input type="text" name="price" placeholder="价格" id="price">
+                    <h4>种类（英文）</h4>
+                    <input type="text" name="category" placeholder="种类（英文）" id="category">
+                    <h4>种类（中文）</h4>
+                    <input type="text" name="category2" placeholder="种类（中文）" id="category2">
+                    <h4>图片</h4>
+                    <input type="file" name="image" id="image" class="fileClassInput ">
+                    <h4>描述（英文）</h4>
+                    <textarea name="description" maxlength="320" id="description"></textarea>
+                    <h4>描述（中文）</h4>
+                    <textarea name="description2" maxlength="320" id="description2"></textarea>
+                    <input type="submit" value="提交" id="sb">
+                </form>
+            {% endif %}
+            {% if message %}
+                <script>
+                    {% if lan == "e" %}
+                        Toast('Successfully Added', 2000);
+                    {% elif lan == "c" %}
+                        Toast('成功添加', 2000);
+                    {% endif %}
+
+                    function Toast(msg, duration) {
+                        duration = isNaN(duration) ? 3000 : duration;
+                        var m = document.createElement('div');
+                        m.innerHTML = msg;
+                        m.style.cssText = "width:10%; min-width:125px; background:black; opacity:0.5; height:50px; color:#fff; line-height:50px; text-align:center; border-radius:5px; position:fixed; top:50%; left:45%; z-index:999999; font-weight:bold;";
+                        document.body.appendChild(m);
+                        setTimeout(function () {
+                            var d = 0.5;
+                            m.style.webkitTransition = '-webkit-transform ' + d + 's ease-in, opacity ' + d + 's ease-in';
+                            m.style.opacity = '0';
+                            setTimeout(function () {
+                                document.body.removeChild(m)
+                            }, d * 1000);
+                        }, duration);
+                    }
+                </script>
+            {% endif %}
+        </div>
+        <style>
+            #product {
+                width: 60%;
+                height: 730px;
+                margin: 0 auto;
+            }
+
+            #product h1 {
+                margin-top: 15%;
+            }
+
+            #management {
+                margin-top: 5%;
+                text-align: left;
+            }
+
+            #management h4 {
+                margin-top: 3%;
+            }
+
+            #productName, #price {
+                height: 50px;
+            }
+
+            .fileClassInput {
+                border: 1px solid white;
+                margin-top: 5px;
+            }
+
+            #description {
+                height: 180px;
+                resize: none;
+            }
+
+            #sb {
+                color: white;
+                border: none;
+                margin-top: 10px;
+                background-color: #1c7430;
+
+            }
+        </style>
+    </div>
+{% endblock %}

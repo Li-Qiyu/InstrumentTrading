@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <link href="//www.w3cschool.cn/statics/plugins/bootstrapold/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<table style="width:180px" class="table table-striped">
+    <thead>
+    <tr>
+        {% if ifSearch %}
+            <th style="width:120px">Result</th>
+        {% endif %}
+    </tr>
+    </thead>
+    <tbody>
+
+    {% if result %}
+        {% for i in result %}
+            <tr>
+                <td>{{ i }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    {% else %}
+        <p>No content was found!</p>
+    {% endif %}
+
+</table>
+</body>
+</html>

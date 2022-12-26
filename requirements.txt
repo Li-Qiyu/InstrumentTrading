@@ -1,0 +1,7 @@
+flask == 1.1.4
+flask_sqlalchemy
+flask_script
+flask_debugtoolbar
+mysqlclient
+markupSafe == 1.1.1
+pymysql

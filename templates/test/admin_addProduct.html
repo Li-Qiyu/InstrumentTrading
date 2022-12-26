@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改商品</title>
+</head>
+<body>
+<div id="product" align="center">
+    <h1>修改商品</h1>
+    <div id="management">
+        <form action="" method="post" enctype="multipart/form-data">
+            <h4>商品标题</h4>
+            <input type="text" name="productName" placeholder="商品标题" id="productName">
+            <h4>商品价格</h4>
+            <input type="text" name="price" placeholder="商品价格" id="price">
+
+            <h4>商品图片</h4>
+            <input type="file" name="image" id="image" class="fileClassInput ">
+            <h4>商品描述</h4>
+            <textarea name="description" maxlength="320" id="description">
+
+            </textarea>
+            <input type="submit" value="保存/添加" id="sb">
+        </form>
+
+    </div>
+    <style>
+        #product {
+            width: 60%;
+            /*height: 730px;*/
+            margin: 0 auto;
+        }
+
+        #product h1 {
+            margin-top: 15%;
+        }
+
+        #management {
+            margin-top: 5%;
+            text-align: left;
+        }
+
+        #management h4 {
+            margin-top: 3%;
+        }
+
+        #productName, #price {
+            width: 800px;
+            height: 50px;
+        }
+
+        .fileClassInput {
+             width: 800px;
+             height: 50px;
+             /*border: 1px solid green;*/
+             margin-top: 5px;
+         }
+        .fileClassInput:hover {
+            border: 1px solid green;
+        }
+
+        #description {
+            width: 800px;
+            height: 220px;
+            resize: none;
+        }
+
+        #sb {
+            width: 800px;
+            height: 50px;
+            color: white;
+            border: none;
+            margin-top: 10px;
+            background-color: #1c7430;
+        }
+    </style>
+</div>
+</body>
+</html>
+
+<script>
+    Toast('操作成功！', 2000);
+
+    //自定义弹框
+    function Toast(msg, duration) {
+        duration = isNaN(duration) ? 3000 : duration;
+        var m = document.createElement('div');
+        m.innerHTML = msg;
+        m.style.cssText = "width:10%; min-width:125px; background:black; opacity:0.5; height:50px; color:#fff; line-height:50px; text-align:center; border-radius:5px; position:fixed; top:50%; left:45%; z-index:999999; font-weight:bold;";
+        document.body.appendChild(m);
+        setTimeout(function () {
+            var d = 0.5;
+            m.style.webkitTransition = '-webkit-transform ' + d + 's ease-in, opacity ' + d + 's ease-in';
+            m.style.opacity = '0';
+            setTimeout(function () {
+                document.body.removeChild(m)
+            }, d * 1000);
+        }, duration);
+    }
+</script>

@@ -1,0 +1,13 @@
+{% block content %}
+    <div align="center">
+        {% if lan == "e" %}
+            <h1 style="margin-top: 10%">QR Code for Payment</h1>
+        {% elif lan == "c" %}
+            <h1 style="margin-top: 10%">支付二维码</h1>
+        {% endif %}
+        <div>
+            <img src="{{ url_for('static',filename='img/zfb.jpg') }}" alt="" width="23%" >
+        </div>
+        <li><a href="{{ url_for('shop_page.orders',lan=lan) }}">Submit Order</a></li>
+    </div>
+{% endblock %}

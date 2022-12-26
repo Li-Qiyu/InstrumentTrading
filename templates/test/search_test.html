@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" action="{{ url_for('index_page.search') }}">
+    <input type="text" name="content" id="content">
+    <input type="submit" value="search">
+</form>
+<div>
+    <table border="1px" cellspacing="0px">
+        {% for i in result %}
+            <tr>
+                <td>Product Name</td>
+                <td>{{ i.productName }}</td>
+                <td>Image</td>
+                <td>{{ i.images }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+</body>
+</html>

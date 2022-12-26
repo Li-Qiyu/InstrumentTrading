@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% if lan == "e" %}
+        <title>Edit Address</title>
+    {% elif lan == "c" %}
+        <title>编辑地址</title>
+    {% endif %}
+</head>
+<body>
+<div id="product" align="center">
+    {% if lan == "e" %}
+        <h1>Modify Address</h1>
+    {% elif lan == "c" %}
+        <h1>修改地址</h1>
+    {% endif %}
+    <div id="management">
+        {% if lan == "e" %}
+            <form action="{{ url_for('member_page.modify_address',username=address.username,lan=lan) }}" method="post"
+                  enctype="multipart/form-data">
+                <h4>Address Name</h4>
+                <input type="text" name="addressName" value="{{ address.addressName if address else '' }}"
+                       placeholder="Address Name" id="addressName">
+                <h4>Phone</h4>
+                <input type="text" name="phone" value="{{ address.userPhone if address else '' }}" placeholder="phone"
+                       id="phone">
+                <h4>Country</h4>
+                <input type="text" name="country" value="{{ address.country if address else '' }}" placeholder="country"
+                       id="country">
+                <h4>Town</h4>
+                <input type="text" name="town" value="{{ address.town if address else '' }}" placeholder="town"
+                       id="town">
+                <h4>Detail</h4>
+                <input type="text" name="detail" value="{{ address.detail if address else '' }}" placeholder="detail"
+                       id="detail">
+                <h4>Post Code</h4>
+                <input type="text" name="postCode" value="{{ address.postCode if address else '' }}"
+                       placeholder="postCode"
+                       id="postCode">
+                <a href="{{ url_for('member_page.modify_address',username=address.username,lan=lan) }}"><input type="submit"
+                                                                                                       value="Submit"
+                                                                                                       id="sb"></a>
+            </form>
+        {% elif lan == "c" %}
+            <form action="{{ url_for('member_page.modify_address',username=address.username,lan=lan) }}" method="post"
+                  enctype="multipart/form-data">
+                <h4>地址名称</h4>
+                <input type="text" name="addressName" value="{{ address.addressName if address else '' }}"
+                       placeholder="地址名称" id="addressName">
+                <h4>手机号</h4>
+                <input type="text" name="phone" value="{{ address.userPhone if address else '' }}" placeholder="手机号"
+                       id="phone">
+                <h4>国家</h4>
+                <input type="text" name="country" value="{{ address.country if address else '' }}" placeholder="国家"
+                       id="country">
+                <h4>城市</h4>
+                <input type="text" name="town" value="{{ address.town if address else '' }}" placeholder="城市"
+                       id="town">
+                <h4>详细地址</h4>
+                <input type="text" name="detail" value="{{ address.detail if address else '' }}" placeholder="详细地址"
+                       id="detail">
+                <h4>邮政编码</h4>
+                <input type="text" name="postCode" value="{{ address.postCode if address else '' }}"
+                       placeholder="邮政编码"
+                       id="postCode">
+                <a href="{{ url_for('member_page.modify_address',username=address.username,lan=lan) }}"><input type="submit"
+                                                                                                       value="提交"
+                                                                                                       id="sb"></a>
+            </form>
+        {% endif %}
+    </div>
+    <style>
+        #product {
+            width: 60%;
+            /*height: 730px;*/
+            margin: 0 auto;
+        }
+
+        #product h1 {
+            margin-top: 15%;
+        }
+
+        #management {
+            margin-top: 5%;
+            text-align: left;
+        }
+
+        #management h4 {
+            margin-top: 3%;
+        }
+
+        #productName, #price {
+            width: 800px;
+            height: 50px;
+        }
+
+        .fileClassInput {
+            width: 800px;
+            height: 50px;
+            /*border: 1px solid green;*/
+            margin-top: 5px;
+        }
+
+        .fileClassInput:hover {
+            border: 1px solid green;
+        }
+
+        #description {
+            width: 800px;
+            height: 220px;
+            resize: none;
+        }
+
+        #sb {
+            width: 800px;
+            height: 50px;
+            color: white;
+            border: none;
+            margin-top: 10px;
+            background-color: #1c7430;
+        }
+    </style>
+</div>
+</body>
+</html>
+
+{#<script>#}
+{#    Toast('Successfully Edited', 2000);#}
+{##}
+{##}
+{#    function Toast(msg, duration) {#}
+{#        duration = isNaN(duration) ? 3000 : duration;#}
+{#        var m = document.createElement('div');#}
+{#        m.innerHTML = msg;#}
+{#        m.style.cssText = "width:10%; min-width:125px; background:black; opacity:0.5; height:50px; color:#fff; line-height:50px; text-align:center; border-radius:5px; position:fixed; top:50%; left:45%; z-index:999999; font-weight:bold;";#}
+{#        document.body.appendChild(m);#}
+{#        setTimeout(function () {#}
+{#            var d = 0.5;#}
+{#            m.style.webkitTransition = '-webkit-transform ' + d + 's ease-in, opacity ' + d + 's ease-in';#}
+{#            m.style.opacity = '0';#}
+{#            setTimeout(function () {#}
+{#                document.body.removeChild(m)#}
+{#            }, d * 1000);#}
+{#        }, duration);#}
+{#    }#}
+{#</script>#}

@@ -1,0 +1,170 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{% block title %}
+        {% if lan == "e" %}
+            Hmart – Online Instrument Shop
+        {% elif lan == "c" %}
+            Hmart – 线上乐器商城
+        {% endif %}
+    {% endblock %}</title>
+    <meta name="description" content="">
+    <meta name="robots" content="noindex, follow"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, follow"/>
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static',filename='') }}img/favicon.ico">
+    <!--All Css Here-->
+
+    <!-- Bootstrap CSS-->
+    <!-- https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='js/mine/bootstrap.min.css') }}
+">
+
+    <!-- Linearicon CSS-->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/linearicons.min.css') }}">
+    <!-- Font Awesome CSS-->
+    <!-- http://www.jq22.com/jquery/font-awesome.4.6.0.css -->
+    <link rel="stylesheet" type="text/css"
+          href="{{ url_for('static',filename='js/mine/font-awesome/css/font-awesome.css') }} ">
+
+    <!-- Animate CSS-->
+    <link rel="stylesheet" href="{{ url_for('static',filename='') }}css/animate.css">
+    <!-- Owl Carousel CSS-->
+    <link rel="stylesheet" href="{{ url_for('static',filename='') }}css/owl.carousel.min.css">
+    <!-- Slick CSS-->
+    <link rel="stylesheet" href="{{ url_for('static',filename='') }}css/slick.css">
+    <!-- Meanmenu CSS-->
+    <link rel="stylesheet" href="{{ url_for('static',filename='') }}css/meanmenu.min.css">
+    <!-- Easyzoom CSS-->
+    <link rel="stylesheet" href="{{ url_for('static',filename='') }}css/easyzoom.css">
+    <!-- Venobox CSS-->
+    <link rel="stylesheet" href="{{ url_for('static',filename='') }}css/venobox.css">
+    <!-- Jquery Ui CSS-->
+    <link rel="stylesheet" href="{{ url_for('static',filename='') }}css/jquery-ui.css">
+    <!-- Nice Select CSS-->
+    <link rel="stylesheet" href="{{ url_for('static',filename='') }}css/nice-select.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='') }}css/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='') }}css/responsive.css">
+    <!-- Modernizr Js -->
+    <script src="{{ url_for('static',filename='') }}js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body>
+
+
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<div class="wrapper">
+    <!--Header Area Start-->
+    <header>
+        <div class="header-container">
+            <div class="header-area header-absolute header-sticky pt-30 pb-30">
+                <div class="container-fluid pl-50 pr-50">
+                    <div class="row">
+                        <!--Header Logo Start-->
+                        <div class="col-lg-3 col-md-3">
+                            <div class="logo-area">
+                                <a href="{{ url_for('index_page.index') }}">
+                                    <img src="/static/images/logo/logo.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <!--Header Logo End-->
+                        <!--Header Menu And Mini Cart Start-->
+                        <div class="col-lg-9 col-md-9 text-lg-right">
+                            <div class="header-menu">
+                                <nav>
+                                    {% if lan == "e" %}
+                                        <ul class="main-menu">
+                                            <li><a href="{{ url_for('index_page.index',lan=lan) }}">Index</a></li>
+                                            <li>
+                                                <a href="{{ url_for("shop_page.shop_full",lan=lan,category="all",order=1,page=1) }}">Shop</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ url_for('blog_page.blog_grid',lan=lan,category="all",page=1) }}">Blog</a>
+                                            </li>
+                                        </ul>
+                                    {% elif lan == "c" %}
+                                        <ul class="main-menu">
+                                            <li><a href="{{ url_for('index_page.index',lan=lan) }}">首页</a></li>
+                                            <li>
+                                                <a href="{{ url_for("shop_page.shop_full",lan=lan,category="all",order=1,page=1) }}">商店</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ url_for('blog_page.blog_grid',lan=lan,category="all",page=1) }}">博客</a>
+                                            </li>
+                                        </ul>
+                                    {% endif %}
+                                </nav>
+                            </div>
+                            <!--Main Menu Area End-->
+
+                        </div>
+                        <!--Header Menu And Mini Cart End-->
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <!--Mobile Menu Area Start-->
+                            <div class="mobile-menu d-lg-none"></div>
+                            <!--Mobile Menu Area End-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--Header Area End-->
+    {% block content %}
+    {% endblock %}
+</div>
+<!--All Js Here-->
+
+<!--Jquery 1.12.4-->
+<!-- http://www.jq22.com/jquery/jquery-1.10.2.js -->
+<script src="{{ url_for('static',filename='js/mine/jquery-1.10.2.js') }}"></script>
+<!--Popper-->
+<script src="{{ url_for('static',filename='js/popper.min.js') }}"></script>
+<!--Bootstrap-->
+<script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
+<!--Imagesloaded-->
+<script src="{{ url_for('static',filename='js/imagesloaded.pkgd.min.js') }}"></script>
+<!--Isotope-->
+<script src="{{ url_for('static',filename='js/isotope.pkgd.min.js') }}"></script>
+<!--Waypoints-->
+<script src="{{ url_for('static',filename='js/waypoints.min.js') }}"></script>
+<!--Counterup-->
+<script src="{{ url_for('static',filename='js/jquery.counterup.min.js') }}"></script>
+<!--Carousel-->
+<script src="{{ url_for('static',filename='js/owl.carousel.min.js') }}"></script>
+<!--Slick-->
+<script src="{{ url_for('static',filename='js/slick.min.js') }}"></script>
+<!--Meanmenu-->
+<script src="{{ url_for('static',filename='js/jquery.meanmenu.min.js') }}"></script>
+<!--Easyzoom-->
+<script src="{{ url_for('static',filename='js/easyzoom.min.js') }}"></script>
+<!--Nice Select-->
+<script src="{{ url_for('static',filename='js/jquery.nice-select.min.js') }}"></script>
+<!--ScrollUp-->
+<script src="{{ url_for('static',filename='js/jquery.scrollUp.min.js') }}"></script>
+<!--Wow-->
+<script src="{{ url_for('static',filename='js/wow.min.js') }}"></script>
+<!--Venobox-->
+<script src="{{ url_for('static',filename='js/venobox.min.js') }}"></script>
+<!--Jquery Ui-->
+<script src="{{ url_for('static',filename='js/mine/jquery-ui.min.js') }}"></script>
+<!-- 网络路径 http://cdn.bootcss.com/jqueryui/1.11.0/jquery-ui.min.js -->
+<!--Countdown-->
+<script src="{{ url_for('static',filename='js/jquery.countdown.min.js') }}"></script>
+<!--Plugins-->
+<script src="{{ url_for('static',filename='js/plugins.js') }}"></script>
+<!--Main Js-->
+<script src="{{ url_for('static',filename='js/main.js') }}"></script>
+</body>
+</html>

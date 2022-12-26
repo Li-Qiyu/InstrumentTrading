@@ -1,0 +1,42 @@
+﻿{% extends "test/shop_base.html" %}
+{% block title %}
+    {% if lan == "e" %}
+        Error
+    {% elif lan == "c" %}
+        错误
+    {% endif %}
+{% endblock %}
+{% block content %}
+    <!--Error 404 Area Start-->
+    <div class="error-404-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="error-wrapper text-center">
+                        {% if lan == "e" %}
+                            <div class="error-text">
+                                <h1>Error</h1>
+                                <h2>You are not permitted to access this page. </h2>
+                                <p>Sorry but only staffs can access this page. </p>
+                            </div>
+                        {% elif lan == "c" %}
+                            <div class="error-text">
+                                <h1>错误</h1>
+                                <h2>您没有权限访问该页面。 </h2>
+                                <p>很抱歉，该页面仅工作人员可访问。 </p>
+                            </div>
+                        {% endif %}
+                        <div class="error-button">
+                            {% if lan == "e" %}
+                                <a href="{{ url_for("index_page.index") }}">Back to home page</a>
+                            {% elif lan == "c" %}
+                                <a href="{{ url_for("index_page.index2") }}">返回首页</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Error 404 Area End-->
+{% endblock %}

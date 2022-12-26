@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link href="//www.w3cschool.cn/statics/plugins/bootstrapold/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<!-- Jinja模板语法 -->
+<table style="width:180px" class="table table-striped" >
+    <thead>
+        <tr >
+            <th style="width:120px">Nickname</th>
+            <th style="width:60px">Username</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if Userlist %}
+            {% for Userlist in Userlist%}
+            <tr>
+                <td>{{Userlist.nickname}}</td>
+                <td>{{Userlist.username}}</td>
+            </tr>
+            {% endfor %}
+    </tbody>
+        {% else %}
+            <p>No content was found!</p>
+        {% endif %}
+
+
+</table>
+</body>
+</html>

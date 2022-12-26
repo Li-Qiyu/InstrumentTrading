@@ -1,0 +1,99 @@
+{% extends "test/shop_base.html" %}
+{% block title %}
+    {% if lan == "e" %}
+        New Review
+    {% elif lan == "c" %}
+        发表评论
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <div id="product" align="center">
+        {% if lan == "e" %}
+            <h1>Add New Review</h1>
+        {% elif lan == "c" %}
+            <h1>发表评论</h1>
+        {% endif %}
+        <div id="management">
+            {% if lan == "e" %}
+                <form action="" method="post" enctype="multipart/form-data">
+                    <h4>Review</h4>
+                    <textarea name="review" maxlength="320" id="review"></textarea>
+                    <input type="submit" value="Submit" id="sb">
+                </form>
+            {% elif lan == "c" %}
+                <form action="" method="post" enctype="multipart/form-data">
+                    <h4>评论</h4>
+                    <textarea name="review" maxlength="320" id="review"></textarea>
+                    <input type="submit" value="提交" id="sb">
+                </form>
+            {% endif %}
+            {% if message %}
+                <script>
+                    {% if lan == "e" %}
+                        Toast('Successfully Added', 2000);
+                    {% elif lan == "c" %}
+                        Toast('成功提交', 2000);
+                    {% endif %}
+                    function Toast(msg, duration) {
+                        duration = isNaN(duration) ? 3000 : duration;
+                        var m = document.createElement('div');
+                        m.innerHTML = msg;
+                        m.style.cssText = "width:10%; min-width:125px; background:black; opacity:0.5; height:50px; color:#fff; line-height:50px; text-align:center; border-radius:5px; position:fixed; top:50%; left:45%; z-index:999999; font-weight:bold;";
+                        document.body.appendChild(m);
+                        setTimeout(function () {
+                            var d = 0.5;
+                            m.style.webkitTransition = '-webkit-transform ' + d + 's ease-in, opacity ' + d + 's ease-in';
+                            m.style.opacity = '0';
+                            setTimeout(function () {
+                                document.body.removeChild(m)
+                            }, d * 1000);
+                        }, duration);
+                    }
+                </script>
+            {% endif %}
+        </div>
+        <style>
+            #product {
+                width: 60%;
+                height: 730px;
+                margin: 0 auto;
+            }
+
+            #product h1 {
+                margin-top: 15%;
+            }
+
+            #management {
+                margin-top: 5%;
+                text-align: left;
+            }
+
+            #management h4 {
+                margin-top: 3%;
+            }
+
+            #productName, #price {
+                height: 50px;
+            }
+
+            .fileClassInput {
+                border: 1px solid white;
+                margin-top: 5px;
+            }
+
+            #description {
+                height: 180px;
+                resize: none;
+            }
+
+            #sb {
+                color: white;
+                border: none;
+                margin-top: 10px;
+                background-color: #1c7430;
+
+            }
+        </style>
+    </div>
+{% endblock %}

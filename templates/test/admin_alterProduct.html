@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Product</title>
+</head>
+<body>
+<div id="product" align="center">
+    <h1>Modify Product</h1>
+    <div id="management">
+        <form action="{{ url_for('staff_page.modify_product',id=product.id) }}" method="post" enctype="multipart/form-data">
+            <h4>Product Name</h4>
+            <input type="text" name="productName" value="{{ product.productName if product else '' }}" placeholder="product name" id="productName">
+            <h4>Price</h4>
+            <input type="text" name="price" value="{{ product.price if product else '' }}" placeholder="price" id="price">
+            <h4>Category</h4>
+            <input type="text" name="category" value="{{ product.category if product else '' }}" placeholder="category" id="category">
+            <h4>Image</h4>
+            <input type="file" name="image" id="image" class="fileClassInput ">
+            <h4>Description</h4>
+            <textarea name="description"  maxlength="320" id="description" >
+                {{ product.description if product else '' }}
+            </textarea>
+            <a href="{{ url_for('staff_page.modify_product',id=product.id) }}"><input type="submit" value="Submit" id="sb"></a>
+        </form>
+
+    </div>
+    <style>
+        #product {
+            width: 60%;
+            /*height: 730px;*/
+            margin: 0 auto;
+        }
+
+        #product h1 {
+            margin-top: 15%;
+        }
+
+        #management {
+            margin-top: 5%;
+            text-align: left;
+        }
+
+        #management h4 {
+            margin-top: 3%;
+        }
+
+        #productName, #price {
+            width: 800px;
+            height: 50px;
+        }
+
+        .fileClassInput {
+            width: 800px;
+            height: 50px;
+            /*border: 1px solid green;*/
+            margin-top: 5px;
+        }
+        .fileClassInput:hover {
+            border: 1px solid green;
+        }
+
+        #description {
+            width: 800px;
+            height: 220px;
+            resize: none;
+        }
+
+        #sb {
+            width: 800px;
+            height: 50px;
+            color: white;
+            border: none;
+            margin-top: 10px;
+            background-color: #1c7430;
+        }
+    </style>
+</div>
+</body>
+</html>
+
+<script>
+    Toast('操作成功！', 2000);
+
+    //自定义弹框
+    function Toast(msg, duration) {
+        duration = isNaN(duration) ? 3000 : duration;
+        var m = document.createElement('div');
+        m.innerHTML = msg;
+        m.style.cssText = "width:10%; min-width:125px; background:black; opacity:0.5; height:50px; color:#fff; line-height:50px; text-align:center; border-radius:5px; position:fixed; top:50%; left:45%; z-index:999999; font-weight:bold;";
+        document.body.appendChild(m);
+        setTimeout(function () {
+            var d = 0.5;
+            m.style.webkitTransition = '-webkit-transform ' + d + 's ease-in, opacity ' + d + 's ease-in';
+            m.style.opacity = '0';
+            setTimeout(function () {
+                document.body.removeChild(m)
+            }, d * 1000);
+        }, duration);
+    }
+</script>

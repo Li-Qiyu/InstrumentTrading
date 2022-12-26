@@ -1,0 +1,141 @@
+﻿{% extends "shop_base.html" %}
+{% block title %}blog{% endblock %}
+{% block content %}
+<!--Breadcrumb Tow Start-->
+		<div class="breadcrumb-tow mb-120">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="breadcrumb-title">
+                            <h1>Shopping Cart</h1>
+                        </div>
+                        <div class="breadcrumb-content breadcrumb-content-tow">
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li class="active">Shopping Cart</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<!--Breadcrumb Tow End-->
+		<!--Shopping Cart Area Strat-->
+		<div class="Shopping-cart-area mb-110">
+		    <div class="container">
+		        <div class="row">
+		            <div class="col-12">
+		                <form action="#">
+		                    <div class="table-content table-responsive">
+		                        <table class="table">
+		                            <thead>
+		                                <tr>
+		                                    <th class="plantmore-product-remove">remove</th>
+		                                    <th class="plantmore-product-thumbnail">images</th>
+		                                    <th class="cart-product-name">Product</th>
+		                                    <th class="plantmore-product-price">Unit Price</th>
+		                                    <th class="plantmore-product-quantity">Quantity</th>
+		                                    <th class="plantmore-product-subtotal">Total</th>
+		                                </tr>
+		                            </thead>
+
+                                    <!-------------------------------- 购物车详情 ------------------------------------------>
+		                            <tbody>
+                                    {% if carts %}
+                                        {% for cart in carts %}
+                                            <tr>
+                                                <td class="plantmore-product-remove"><a href="{{ url_for('shop.delcart',id=cart.id) }}"><i class="fa fa-times"></i></a></td>
+                                                <td class="plantmore-product-thumbnail"><a href="#"><img src="{{ url_for('send_files',filenames=cart.images) }}" alt="" width="50px" height="50px"></a></td>
+                                                <td class="plantmore-product-name"><a href="#">{{ cart.productName }}</a></td>
+                                                <td class="plantmore-product-price"><span class="amount">￥{{ cart.price }}</span></td>
+                                                <td class="plantmore-product-quantity">
+                                                    <input value="1" type="number">
+                                                </td>
+                                                <td class="product-subtotal"><span class="amount">￥{{ cart.price }}</span></td>
+                                            </tr>
+                                        {% endfor %}
+                                    {% endif %}
+		                            </tbody>
+		                        </table>
+		                    </div>
+		                    <div class="row">
+		                        <div class="col-12">
+		                            <div class="coupon-all">
+		                                <div class="coupon">
+		                                    <input id="coupon_code" class="input-text" name="coupon_code" value="" placeholder="券码" type="text">
+		                                    <input class="button" name="apply_coupon" value="使用优惠券" type="submit">
+		                                </div>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <div class="row">
+		                        <div class="col-md-5 ml-auto">
+		                            <div class="cart-page-total">
+		                                <h2>购物车总计</h2>
+		                                <ul>
+                                            <li>合计 <span>￥{{ totalPrices[0] if totalPrices else "" }}</span></li>
+		                                    <li>总计 <span>￥{{ totalPrices[0] if totalPrices else "" }}</span></li>
+		                                </ul>
+		                                <a href="{{ url_for('shop.checkout') }}">提交订单/结算</a>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </form>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+		<!--Shopping Cart Area End-->
+		<!--Brand Area Start-->
+		<div class="brand-area mb-105">
+		    <div class="container">
+		        <div class="row">
+		            <div class="col-12">
+		                <div class="brand-active">
+		                    <!--Single Brand Start-->
+		                    <div class="single-brand img-full">
+		                      <a href="#"><img src="../static/img/brand/brand1.png" alt=""></a>
+		                    </div>
+		                    <!--Single Brand End-->
+		                    <!--Single Brand Start-->
+		                    <div class="single-brand img-full">
+		                      <a href="#"><img src="../static/img/brand/brand2.png" alt=""></a>
+		                    </div>
+		                    <!--Single Brand End-->
+		                    <!--Single Brand Start-->
+		                    <div class="single-brand img-full">
+		                      <a href="#"><img src="../static/img/brand/brand3.png" alt=""></a>
+		                    </div>
+		                    <!--Single Brand End-->
+		                    <!--Single Brand Start-->
+		                    <div class="single-brand img-full">
+		                      <a href="#"><img src="../static/img/brand/brand4.png" alt=""></a>
+		                    </div>
+		                    <!--Single Brand End-->
+		                    <!--Single Brand Start-->
+		                    <div class="single-brand img-full">
+		                      <a href="#"><img src="../static/img/brand/brand5.png" alt=""></a>
+		                    </div>
+		                    <!--Single Brand End-->
+		                    <!--Single Brand Start-->
+		                    <div class="single-brand img-full">
+		                      <a href="#"><img src="../static/img/brand/brand3.png" alt=""></a>
+		                    </div>
+		                    <!--Single Brand End-->
+		                    <!--Single Brand Start-->
+		                    <div class="single-brand img-full">
+		                      <a href="#"><img src="../static/img/brand/brand4.png" alt=""></a>
+		                    </div>
+		                    <!--Single Brand End-->
+		                    <!--Single Brand Start-->
+		                    <div class="single-brand img-full">
+		                      <a href="#"><img src="../static/img/brand/brand5.png" alt=""></a>
+		                    </div>
+		                    <!--Single Brand End-->
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+		<!--Brand Area End-->
+{% endblock %}

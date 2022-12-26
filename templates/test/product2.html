@@ -1,0 +1,644 @@
+{% extends "/test/shop_base.html" %}
+
+{% block content %}
+    <!--Breadcrumb One Start-->
+    <div class="breadcrumb-one mb-120">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb-img">
+                        <img src="../static/img/page-banner/product-banner.jpg" alt="">
+                    </div>
+                    <div class="breadcrumb-content">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li class="active">Single Product</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Breadcrumb One End-->
+    <!--Single Product Area Start-->
+    <div class="single-product-area mb-115">
+        <div class="container">
+            <div class="row">
+
+
+                <div class="col-md-12 col-lg-5">
+                    <div class="product-details-img-tab">
+                        <!--产品标签内容 Start-->
+                        <div class="tab-content single-product-img">
+                            <div class="tab-pane fade show active" id="product1">
+                                <div class="product-large-thumb img-full">
+                                    <div class="easyzoom easyzoom--overlay">
+                                        <a href="{{ products[0].images }}">
+                                            <img src="{{ products[0].images }}" alt="">
+                                        </a>
+                                        <a href="{{ products[0].images }}"
+                                           class="popup-img venobox"
+                                           data-gall="myGallery"><i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="product2">
+                                <div class="product-large-thumb img-full">
+                                    <div class="easyzoom easyzoom--overlay">
+                                        <a href="{{ products[0].images }}">
+                                            <img src="{{ products[0].images }}" alt="">
+                                        </a>
+                                        <a href="{{ products[0].images }}"
+                                           class="popup-img venobox"
+                                           data-gall="myGallery"><i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="product3">
+                                <div class="product-large-thumb img-full">
+                                    <div class="easyzoom easyzoom--overlay">
+                                        <a href="{{ products[0].images }}">
+                                            <img src="{{ products[0].images }}" alt="">
+                                        </a>
+                                        <a href="{{ products[0].images }}"
+                                           class="popup-img venobox"
+                                           data-gall="myGallery"><i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="product4">
+                                <div class="product-large-thumb img-full">
+                                    <div class="easyzoom easyzoom--overlay">
+                                        <a href="{{ products[0].images }}">
+                                            <img src="{{ products[0].images }}" alt="">
+                                        </a>
+                                        <a href="{{ products[0].images }}"
+                                           class="popup-img venobox"
+                                           data-gall="myGallery"><i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="product5">
+                                <div class="product-large-thumb img-full">
+                                    <div class="easyzoom easyzoom--overlay">
+                                        <a href="{{ products[0].images }}">
+                                            <img src="{{ products[0].images }}" alt="">
+                                        </a>
+                                        <a href="{{ products[0].images }}"
+                                           class="popup-img venobox"
+                                           data-gall="myGallery"><i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="product6">
+                                <div class="product-large-thumb img-full">
+                                    <div class="easyzoom easyzoom--overlay">
+                                        <a href="{{ products[0].images }}">
+                                            <img src="{{ products[0].images }}" alt="">
+                                        </a>
+                                        <a href="{{ products[0].images }}"
+                                           class="popup-img venobox"
+                                           data-gall="myGallery"><i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--产品标签内容 End-->
+                        <!--产品标签菜单 Start-->
+                        <div class="product-menu">
+                            <div class="nav product-tab-menu">
+                                <div class="product-details-img">
+                                    <a class="active" data-toggle="tab" href="#product1"><img
+                                            src="{{ products[0].images }}" alt=""></a>
+                                </div>
+                                <div class="product-details-img">
+                                    <a data-toggle="tab" href="#product2"><img
+                                            src="{{ products[0].images }}" alt=""></a>
+                                </div>
+                                <div class="product-details-img">
+                                    <a data-toggle="tab" href="#product3"><img
+                                            src="{{ products[0].images }}" alt=""></a>
+                                </div>
+                                <div class="product-details-img">
+                                    <a data-toggle="tab" href="#product4"><img
+                                            src="{{ products[0].images }}" alt=""></a>
+                                </div>
+                                <div class="product-details-img">
+                                    <a data-toggle="tab" href="#product5"><img
+                                            src="{{ products[0].images }}" alt=""></a>
+                                </div>
+                                <div class="product-details-img">
+                                    <a data-toggle="tab" href="#product6"><img
+                                            src="{{ products[0].images }}" alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--产品标签菜单-->
+                    </div>
+                </div>
+
+
+                <div class="col-md-12 col-lg-7">
+                    <!--Product Details Content Start-->
+                    <div class="product-details-content">
+                        <!--Product Nav Start-->
+                        <div class="product-nav">
+                            <a href="#"><i class="fa fa-angle-left"></i></a>
+                            <a href="#"><i class="fa fa-angle-right"></i></a>
+                        </div>
+                        <!--Product Nav End-->
+                        <!-- ------------------------------商品信息修改---------------------------- -->
+                        <h2>{{ ID.productName if ID else '' }}</h2>
+                        <div class="single-product-reviews">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-o"></i>
+                            <a class="review-link" href="#">(1 customer review)</a>
+                        </div>
+                        <div class="single-product-price">
+                            <span class="price new-price">￥66.00</span>
+                            <span class="regular-price">￥{{ ID.price if ID else '' }}</span>
+                        </div>
+                        <div class="product-description">
+                            <p>{{ ID.productDescription if ID else '' }}</p>
+                        </div>
+                        <p class="stock in-stock">库存</p>
+                        <div class="single-product-quantity">
+                            {#<!-- <form class="add-quantity" action="{{ url_for('shop_page.addcartssss',idsss=ID.id) }}"#}
+                            {# method="post" id="subform"> -->#}
+                            <div class="product-quantity">  <!-- 暂未处理购买商品数量的逻辑 -->
+                                <input value="1" type="number" name="nnn" disabled="disabled">
+                            </div>
+                            <div class="add-to-link">
+                                <!-- name="submit" onclick="document.getElementById('subform').submit();return false" -->
+                                <a href="{{ url_for('shop_page.addcartssss',idsss=ID.id) }}" class="product-btn"
+                                   data-text="add to cart" style="display: inline-block;">添加到购物车</a>
+                            </div>
+                            </form>
+                            <!-- </form> -->
+                        </div>
+                        <div class="wishlist-compare-btn">
+                            {% if isTrue == 1 %}
+                                <a class="wishlist-btn" onclick="Toast('已经收藏了！',2000)"
+                                   style="background-color: #94c74c">添加到心愿单</a>
+                            {% elif isTrue == 0 %}
+                                <a href="{{ url_for('shop.addwishs',id=ID.id) }}" class="wishlist-btn"
+                                   onclick="Toast('收藏成功！',2000)">添加到心愿单</a>
+                            {% endif %}
+                            <a href="#" class="add-compare">对比</a>
+                        </div>
+                        <div class="product-meta">
+                                <span class="posted-in">
+                                        Categories:
+		                                <a href="#">Accessories</a>,
+		                                <a href="#">Electronics</a>
+		                            </span>
+                        </div>
+                        <div class="single-product-sharing">
+                            <h3>Share this product</h3>
+                            <ul>
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--Product Details Content End-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--单一产品领域 End-->
+
+
+    <!--Product Description Review Area Start-->
+    <div class="product-description-review-area mb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="product-review-tab">
+                        <!--Review And Description Tab Menu Start-->
+                        <ul class="nav dec-and-review-menu">
+                            <li>
+                                <a class="active" data-toggle="tab" href="#description">详情</a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#reviews">评价
+                                    ({{ pingLunNumber if pingLunNumber else '0' }})</a>
+                            </li>
+                        </ul>
+                        <!--Review And Description Tab Menu End-->
+                        <!--Review And Description Tab Content Start-->
+                        <div class="tab-content product-review-content-tab" id="myTabContent-4">
+                            <div class="tab-pane fade active show" id="description">
+                                <div class="single-product-description">
+                                    <!-- 商品描述 -->
+                                    <p>{{ ID.productDescription if ID else '' }}.</p>
+                                    <p></p>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="reviews">
+                                <div class="review-page-comment">
+                                    <h2>用户评价</h2>
+                                    {% if getpingLun %}
+                                        {% for pinlun in getpingLun %}
+                                            <ul>
+                                                <li>
+                                                    <div class="product-comment">
+                                                        <img src="../static/img/icon/author.png" alt="">
+                                                        <div class="product-comment-content">
+                                                            <div class="product-reviews">
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star"></i>
+                                                                <i class="fa fa-star-o"></i>
+                                                            </div>
+                                                            <p class="meta">
+                                                                <strong>{{ pinlun.username }}</strong> - <span><!-- November 22, 2016 --></span>
+                                                                <div class="description">
+                                                                    <p>{{ pinlun.productReviews }}</p>
+                                                                </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        {% endfor %}
+                                    {% else %}
+                                        <h3>暂无评论</h3>
+                                    {% endif %}
+
+
+                                </div>
+                                {% if order %}
+                                    {% if order.status == '已签收' %}
+                                        <!------------ 用户添加评价模块 ------------------------start--------------------------->
+                                        <div class="review-form-wrapper">
+                                            <div class="review-form">
+                                                <span class="comment-reply-title">添加一条评论 </span>
+                                                <form action="" method="post">
+                                                    <div class="comment-form-rating">
+                                                        <label>评价等级</label>
+                                                        <div class="rating">
+                                                            <i class="fa fa-star-o"></i>
+                                                            <i class="fa fa-star-o"></i>
+                                                            <i class="fa fa-star-o"></i>
+                                                            <i class="fa fa-star-o"></i>
+                                                            <i class="fa fa-star-o"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-element">
+                                                        <div class="comment-form-comment">
+                                                            <label>评论内容</label>
+                                                            <textarea name="productReviews" cols="40"
+                                                                      rows="8"></textarea>
+                                                        </div>
+                                                        <div class="comment-submit">
+                                                            {#                                                            <button type="submit" class="form-button">Submit</button>#}
+                                                            <input type="submit" value="发表评论" class="form-button">
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <!------------ 用户添加评价模块 -----------------------end----------------------------->
+                                    {% endif %}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <!--Review And Description Tab Content End-->
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!--Product Description Review Area Start-->
+    <!--Also Like Product Start-->
+    <div class="also-like-product">
+        <div class="container">
+            <div class="row">
+                <!--Section Title Start-->
+                <div class="col-12">
+                    <div class="section-title text-center mb-35">
+                        <h3>你可能喜欢</h3>
+                    </div>
+                </div>
+                <!--Section Title End-->
+            </div>
+            <div class="row">
+                <div class="product-slider-active">
+
+                    {% for product in products %}
+                        <div class="single-product mb-25">
+                            <div class="product-img img-full">
+                                <a href="{{ url_for('shop_page.single_product',id=product.id) }}">
+                                    <img src="{{ products[0].images }}" alt="">
+                                </a>
+                                <!-- 暂时删除的功能 -->
+                                <div class="product-action" style="display: none">
+                                    <ul>
+                                        <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i
+                                                class="fa fa-search"></i></a></li>
+                                        <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
+                                        <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h2><a href="single-product.html">{{ product.productName }}</a></h2>
+                                <div class="product-price">
+                                    <div class="price-box">
+                                        <span class="regular-price">￥{{ product.price }}</span>
+                                    </div>
+                                    <div class="add-to-cart" style="display: none">  <!-- 暂时删除的功能 -->
+                                        <a href="{{ url_for('shop_page.addcartssss',idsss=product.id) }}">添加到购物车</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    </div>
+    <!--Also Like Product End-->
+    <!--Related Product Start-->
+    <div class="Related-product mt-105 mb-100">
+        <div class="container">
+            <div class="row">
+                <!--Section Title Start-->
+                <div class="col-12">
+                    <div class="section-title text-center mb-35">
+                        <h3>相关产品</h3>
+                    </div>
+                </div>
+                <!--Section Title End-->
+            </div>
+            <div class="row">
+                <div class="product-slider-active">
+                    <div class="col-md-3 col-lg-3 col-sm-4 col-xs-12">
+                        <!--Single Product Start-->
+                        <div class="single-product mb-25">
+                            <div class="product-img img-full">
+                                <a href="single-product.html">
+                                    <img src="../static/img/product/product7.jpg" alt="">
+                                </a>
+                                <div class="product-action">
+                                    <ul>
+                                        <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i
+                                                class="fa fa-search"></i></a></li>
+                                        <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
+                                        <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h2><a href="single-product.html">Vulputate justo</a></h2>
+                                <div class="product-price">
+                                    <div class="price-box">
+                                        <span class="regular-price">$70.00</span>
+                                    </div>
+                                    <div class="add-to-cart">
+                                        <a href="#">Add To Cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Single Product End-->
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-sm-4 col-xs-12">
+                        <!--Single Product Start-->
+                        <div class="single-product mb-25">
+                            <div class="product-img img-full">
+                                <a href="single-product.html">
+                                    <img src="../static/img/product/product9.jpg" alt="">
+                                </a>
+                                <div class="product-action">
+                                    <ul>
+                                        <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i
+                                                class="fa fa-search"></i></a></li>
+                                        <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
+                                        <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h2><a href="single-product.html">Ipsum imperdie</a></h2>
+                                <div class="product-price">
+                                    <div class="price-box">
+                                        <span class="regular-price">$100.00</span>
+                                    </div>
+                                    <div class="add-to-cart">
+                                        <a href="#">Add To Cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Single Product End-->
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-sm-4 col-xs-12">
+                        <!--Single Product Start-->
+                        <div class="single-product mb-25">
+                            <div class="product-img img-full">
+                                <a href="single-product.html">
+                                    <img src="../static/img/product/product11.jpg" alt="">
+                                </a>
+                                <div class="product-action">
+                                    <ul>
+                                        <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i
+                                                class="fa fa-search"></i></a></li>
+                                        <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
+                                        <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h2><a href="single-product.html">Pellentesque position</a></h2>
+                                <div class="product-price">
+                                    <div class="price-box">
+                                        <span class="regular-price">$90.00</span>
+                                    </div>
+                                    <div class="add-to-cart">
+                                        <a href="#">Add To Cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Single Product End-->
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-sm-4 col-xs-12">
+                        <!--Single Product Start-->
+                        <div class="single-product mb-25">
+                            <div class="product-img img-full">
+                                <a href="single-product.html">
+                                    <img src="../static/img/product/product1.jpg" alt="">
+                                </a>
+                                <div class="product-action">
+                                    <ul>
+                                        <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i
+                                                class="fa fa-search"></i></a></li>
+                                        <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
+                                        <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h2><a href="single-product.html">Eleifend quam</a></h2>
+                                <div class="product-price">
+                                    <div class="price-box">
+                                        <span class="regular-price">$115.00</span>
+                                    </div>
+                                    <div class="add-to-cart">
+                                        <a href="#">Add To Cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Single Product End-->
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-sm-4 col-xs-12">
+                        <!--Single Product Start-->
+                        <div class="single-product mb-25">
+                            <div class="product-img img-full">
+                                <a href="single-product.html">
+                                    <img src="../static/img/product/product3.jpg" alt="">
+                                </a>
+                                <div class="product-action">
+                                    <ul>
+                                        <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i
+                                                class="fa fa-search"></i></a></li>
+                                        <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
+                                        <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h2><a href="single-product.html">Nulla sed stg</a></h2>
+                                <div class="product-price">
+                                    <div class="price-box">
+                                        <span class="regular-price">$40.00</span>
+                                    </div>
+                                    <div class="add-to-cart">
+                                        <a href="#">Add To Cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Single Product End-->
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-sm-4 col-xs-12">
+                        <!--Single Product Start-->
+                        <div class="single-product mb-25">
+                            <div class="product-img img-full">
+                                <a href="single-product.html">
+                                    <img src="../static/img/product/product5.jpg" alt="">
+                                </a>
+                                <div class="product-action">
+                                    <ul>
+                                        <li><a href="#open-modal" data-toggle="modal" title="Quick view"><i
+                                                class="fa fa-search"></i></a></li>
+                                        <li><a href="#" title="Whishlist"><i class="fa fa-heart-o"></i></a></li>
+                                        <li><a href="#" title="Compare"><i class="fa fa-refresh"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h2><a href="single-product.html">Odio tortor consequat</a></h2>
+                                <div class="product-price">
+                                    <div class="price-box">
+                                        <span class="regular-price">$90.00</span>
+                                    </div>
+                                    <div class="add-to-cart">
+                                        <a href="#">Add To Cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Single Product End-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Related Product End-->
+    <!--Brand Area Start-->
+    <div class="brand-area mb-105">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="brand-active">
+                        <!--Single Brand Start-->
+                        <div class="single-brand img-full">
+                            <a href="#"><img src="../static/img/brand/brand1.png" alt=""></a>
+                        </div>
+                        <!--Single Brand End-->
+                        <!--Single Brand Start-->
+                        <div class="single-brand img-full">
+                            <a href="#"><img src="../static/img/brand/brand2.png" alt=""></a>
+                        </div>
+                        <!--Single Brand End-->
+                        <!--Single Brand Start-->
+                        <div class="single-brand img-full">
+                            <a href="#"><img src="../static/img/brand/brand3.png" alt=""></a>
+                        </div>
+                        <!--Single Brand End-->
+                        <!--Single Brand Start-->
+                        <div class="single-brand img-full">
+                            <a href="#"><img src="../static/img/brand/brand4.png" alt=""></a>
+                        </div>
+                        <!--Single Brand End-->
+                        <!--Single Brand Start-->
+                        <div class="single-brand img-full">
+                            <a href="#"><img src="../static/img/brand/brand5.png" alt=""></a>
+                        </div>
+                        <!--Single Brand End-->
+                        <!--Single Brand Start-->
+                        <div class="single-brand img-full">
+                            <a href="#"><img src="../static/img/brand/brand3.png" alt=""></a>
+                        </div>
+                        <!--Single Brand End-->
+                        <!--Single Brand Start-->
+                        <div class="single-brand img-full">
+                            <a href="#"><img src="../static/img/brand/brand4.png" alt=""></a>
+                        </div>
+                        <!--Single Brand End-->
+                        <!--Single Brand Start-->
+                        <div class="single-brand img-full">
+                            <a href="#"><img src="../static/img/brand/brand5.png" alt=""></a>
+                        </div>
+                        <!--Single Brand End-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Brand Area End-->
+
+    <!-- 消息提示 -->
+    <script>
+        //自定义弹框
+        function Toast(msg, duration) {
+            duration = isNaN(duration) ? 3000 : duration;
+            var m = document.createElement('div');
+            m.innerHTML = msg;
+            m.style.cssText = "width:20%; min-width:100px; background:#2b2b2b; opacity:0.5; height:40px; color:#fff; line-height:40px; text-align:center; border-radius:5px; position:fixed; top:40%; left:45%; z-index:999999; font-weight:bold;";
+            document.body.appendChild(m);
+            setTimeout(function () {
+                var d = 0.5;
+                m.style.webkitTransition = '-webkit-transform ' + d + 's ease-in, opacity ' + d + 's ease-in';
+                m.style.opacity = '0';
+                setTimeout(function () {
+                    document.body.removeChild(m)
+                }, d * 1000);
+            }, duration);
+        }
+    </script>
+{% endblock %}

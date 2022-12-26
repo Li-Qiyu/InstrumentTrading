@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link href="//www.w3cschool.cn/statics/plugins/bootstrapold/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<!-- Jinja模板语法 -->
+<table style="width:600px" class="table table-striped" >
+    <thead>
+        <tr>
+            <th style="width:600px">Images</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if product %}
+            {% for product in product%}
+            <tr>
+                <td>{{product.images}}</td>
+                <img src={{product.images}} />
+            </tr>
+            {% endfor %}
+    </tbody>
+        {% else %}
+            <p>No content was found!</p>
+        {% endif %}
+
+
+</table>
+</body>
+</html>
